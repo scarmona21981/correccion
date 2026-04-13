@@ -1,0 +1,54 @@
+/* ============================================
+    THEME OVERRIDE - Red de seguridad mínima
+    NOTA: Los componentes usan CSS vars via visual-upgrade.css
+    y professional-ui.css. Este archivo solo cubre edge cases
+    donde elementos genéricos sin clase necesitan tema.
+
+    REGLA: NO sobreescribir selectores que ya tienen estilos
+    en visual-upgrade.css o professional-ui.css.
+    ============================================ */
+
+/* ------------------------------------------------
+    SECCIÓN 1: CANVAS / WORKSPACE
+    Solo el fondo del canvas que no tiene clase propia
+    ------------------------------------------------ */
+.workspace-content {
+  background-color: var(--canvas-bg);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+}
+
+/* ------------------------------------------------
+    SECCIÓN 2: BADGES DE ESTADO (data-status)
+    Para elementos con atributo data-status
+    ------------------------------------------------ */
+.badge-success,
+[data-status="success"] {
+  background: var(--badge-success-bg);
+  color: var(--success);
+}
+
+.badge-error,
+[data-status="error"] {
+  background: var(--badge-error-bg);
+  color: var(--danger);
+}
+
+.badge-warning,
+[data-status="warning"] {
+  background: var(--badge-warning-bg);
+  color: var(--warning);
+}
+
+/* ------------------------------------------------
+    SECCIÓN 3: SVG / CANVAS ELEMENTS
+    Pipe y node colors para elementos de dibujo
+    ------------------------------------------------ */
+.pipe-line {
+  stroke: var(--pipe-default);
+}
+
+.chamber-node {
+  fill: var(--node-default);
+}

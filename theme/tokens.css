@@ -1,0 +1,667 @@
+:root {
+  --sidebar-width: 280px;
+  --header-height: 56px;
+  --footer-height: 32px;
+
+  --font-family: 'Inter', system-ui, sans-serif;
+  --font-family-numeric: 'Source Sans 3', sans-serif;
+  
+  /* Tipografía - Tamaños unificados */
+  --text-xs: 0.7rem;      /* 11.2px - Muy pequeño */
+  --text-sm: 0.8rem;      /* 12.8px - Pequeño */
+  --text-base: 0.875rem;  /* 14px   - Normal */
+  --text-md: 0.9375rem;   /* 15px   - Mediano */
+  --text-lg: 1.125rem;   /* 18px   - Títulos pequeños */
+  --text-xl: 1.25rem;    /* 20px   - Títulos medianos */
+  
+  /* Tipografía - Pesos */
+  --font-light: 300;
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+   
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+  
+  --shadow-soft: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-elevated: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  --table-header-bg: var(--surface);
+  --table-row-hover: var(--hover-bg);
+  --table-row-selected: var(--active-bg);
+  
+  --canvas-bg: var(--bg);
+  --grid-color: rgba(255, 255, 255, 0.03);
+
+  --terrain-line: #8a7b6b;
+  --pipe-line: #1d4f91;
+  --hgl-line: #7dc7ff;
+  --egl-line: #f4b942;
+
+  /* Overlay & Toolbar tokens */
+  --overlay-bg: rgba(30, 30, 31, 0.85);
+  --overlay-border: rgba(255, 255, 255, 0.15);
+  --overlay-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  --overlay-blur: blur(16px);
+  
+  --toolbar-bg: var(--overlay-bg);
+  --toolbar-border: var(--overlay-border);
+  --toolbar-shadow: var(--overlay-shadow);
+  --toolbar-blur: var(--overlay-blur);
+  --toolbar-hover-bg: rgba(255, 255, 255, 0.1);
+  --toolbar-active-bg: var(--accent-soft);
+  --toolbar-icon-inactive: rgba(255, 255, 255, 0.6);
+  --toolbar-divider: rgba(255, 255, 255, 0.15);
+
+  /* Badge tokens */
+  --badge-min-width: 70px;
+
+  /* Modal tokens */
+  --modal-backdrop: rgba(0, 0, 0, 0.5);
+  --modal-bg: var(--surface-elevated);
+  --modal-border: var(--border);
+  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+  /* Panel tokens */
+  --panel-bg: var(--surface-elevated);
+  --panel-border: var(--border);
+  --panel-shadow: var(--shadow-sm);
+
+  /* Input tokens */
+  --input-bg: var(--bg);
+  --input-border: var(--border);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-muted);
+  --input-focus-border: var(--accent);
+
+  /* Button tokens */
+  --btn-height: 36px;
+  --btn-padding-x: 16px;
+  --btn-padding-y: 8px;
+  --btn-radius: var(--radius-md);
+  --btn-font-size: 0.875rem;
+  
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  
+   /* Functional Colors - UI/UX */
+   --functional-success: #22c55e;
+   --functional-success-bg: rgba(34, 197, 94, 0.12);
+   --functional-success-border: rgba(34, 197, 94, 0.4);
+   --functional-warning: #ff9f43;
+   --functional-warning-bg: rgba(255, 159, 67, 0.12);
+   --functional-warning-border: rgba(255, 159, 67, 0.4);
+   --functional-danger: #ef4444;
+   --functional-danger-bg: rgba(239, 68, 68, 0.12);
+   --functional-danger-border: rgba(239, 68, 68, 0.4);
+
+   /* Theme RGB values for transparency effects */
+   --accent-rgb: 65, 199, 255;
+   --warning-rgb: 255, 159, 67;
+   --success-rgb: 34, 197, 94;
+   --danger-rgb: 239, 68, 68;
+   --terrain-line-rgb: 138, 123, 107;
+   
+   /* System colors for pumping systems */
+   --system-1: #10b981;
+   --system-2: #3b82f6;
+   --system-3: #f59e0b;
+   --system-4: #ef4444;
+   --system-5: #8b5cf6;
+   --system-6: #06b6d4;
+   --system-7: #f97316;
+   --system-8: #22c55e;
+
+   /* Profile View Specific Colors */
+   --pipe-line-dark: var(--accent);
+   --pipe-line: var(--accent);
+   --pipe-glow: rgba(var(--accent-rgb), 0.18);
+   --pipe-selected-dark: var(--warning);
+   --pipe-selected: var(--warning);
+   --pipe-selected-glow: rgba(var(--warning-rgb), 0.32);
+   --terrain-line: var(--terrain-line);
+   --terrain-fill-top: rgba(var(--terrain-line-rgb), 0.18);
+   --terrain-fill-bottom: rgba(var(--terrain-line-rgb), 0.04);
+   --success: var(--success);
+   --danger: var(--danger);
+   --accent: var(--accent);
+   --warning: var(--warning);
+   --cam-line: rgba(22,163,74,0.25);
+   --cam-line-selected: rgba(245,158,11,0.5);
+   --crosshair: rgba(255,255,255,0.15);
+   --strip-bg: rgba(0,0,0,0.06);
+   --strip-bg-alt: rgba(0,0,0,0.02);
+   --strip-border: rgba(148,163,184,0.2);
+
+   /* Profile View Specific Colors */
+   --pipe-line-dark: var(--accent);
+   --pipe-line: var(--accent);
+   --pipe-glow: rgba(var(--accent-rgb), 0.18);
+   --pipe-selected-dark: var(--warning);
+   --pipe-selected: var(--warning);
+   --pipe-selected-glow: rgba(var(--warning-rgb), 0.32);
+   --terrain-line: var(--terrain-line);
+   --terrain-fill-top: rgba(var(--terrain-line-rgb), 0.18);
+   --terrain-fill-bottom: rgba(var(--terrain-line-rgb), 0.04);
+   --success: var(--success);
+   --danger: var(--danger);
+   --accent: var(--accent);
+   --warning: var(--warning);
+   --cam-line: rgba(22,163,74,0.25);
+   --cam-line-selected: rgba(245,158,11,0.5);
+   --crosshair: rgba(255,255,255,0.15);
+   --strip-bg: rgba(0,0,0,0.06);
+   --strip-bg-alt: rgba(0,0,0,0.02);
+   --strip-border: rgba(148,163,184,0.2);
+  
+  /* Soft backgrounds - Base fallbacks */
+  --success-soft: rgba(34, 197, 94, 0.12);
+  --info-soft: rgba(59, 130, 246, 0.12);
+  
+  /* Legacy compatibility - COLORS object from components */
+  --bg-color: var(--bg);
+  --sidebar-bg: var(--surface);
+  --border-color: var(--border);
+  --accent-color: var(--accent);
+  --text-main: var(--text-primary);
+  --hover-bg: var(--hover-bg);
+  --active-bg: var(--active-bg);
+  --success-color: var(--success);
+  --error-color: var(--danger);
+  --warning-color: var(--warning);
+
+  /* Input backgrounds */
+  --input-bg: var(--bg);
+  --input-border: var(--border);
+  --surface-input: rgba(0, 0, 0, 0.2);
+  --surface-input-border: rgba(255, 255, 255, 0.1);
+
+  /* Role colors (for badges) */
+  --role-naciente: #10b981;
+  --role-naciente-bg: rgba(16, 185, 129, 0.15);
+  --role-lateral: #3b82f6;
+  --role-lateral-bg: rgba(59, 130, 246, 0.15);
+  --role-colector: #a855f7;
+  --role-colector-bg: rgba(168, 85, 247, 0.15);
+  --role-caneria: #ec4899;
+  --role-caneria-bg: rgba(236, 72, 153, 0.15);
+  --role-neutral: #64748b;
+  --role-neutral-bg: rgba(100, 116, 139, 0.15);
+
+  /* Semantic state backgrounds */
+  --success-bg: rgba(34, 197, 94, 0.1);
+  --success-border: rgba(34, 197, 94, 0.3);
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-border: rgba(239, 68, 68, 0.3);
+  --warning-bg: rgba(255, 159, 67, 0.1);
+  --warning-border: rgba(255, 159, 67, 0.3);
+  --info-bg: rgba(59, 130, 246, 0.1);
+  --info-border: rgba(59, 130, 246, 0.3);
+
+  /* Locked/disabled state */
+  --locked-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   THEME: engineering-dark (Default)
+   Professional technical engineering theme
+   ============================================ */
+[data-theme="engineering-dark"] {
+  --bg: #10161d;
+  --surface: #18212b;
+  --surface-elevated: #1f2b36;
+  --border: #314252;
+  
+  --text-primary: #d8e3ee;
+  --text-secondary: #93a7bb;
+  --text-muted: #617487;
+  
+  --accent: #41c7ff;
+  --accent-soft: rgba(65, 199, 255, 0.16);
+  --accent-hover: #20b4f0;
+  --accent-glow: rgba(65, 199, 255, 0.4);
+  
+  --danger: #ef4444;
+  --warning: #ff9f43;
+  --success: #22c55e;
+  --info: #3b82f6;
+  
+  --hover-bg: #22303d;
+  --active-bg: #293948;
+
+  /* Soft backgrounds for semantic states */
+  --success-soft: rgba(34, 197, 94, 0.12);
+  --info-soft: rgba(59, 130, 246, 0.12);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  
+  --table-header-bg: #131c24;
+  --table-row-hover: #1d2933;
+  --table-row-selected: rgba(65, 199, 255, 0.18);
+  
+  --canvas-bg: #0d141b;
+  --grid-color: rgba(128, 188, 255, 0.05);
+
+  --terrain-line: #8a7b6b;
+  --pipe-line: #3c78a8;
+  --hgl-line: #77d8ff;
+  --egl-line: #ffb25c;
+  
+  --pipe-default: #5a7286;
+  --pipe-selected: #41c7ff;
+  --node-default: #67b7ff;
+  --node-selected: #ffffff;
+  
+  --badge-success-bg: rgba(34, 197, 94, 0.15);
+  --badge-success-text: #22c55e;
+  --badge-error-bg: rgba(239, 68, 68, 0.15);
+  --badge-error-text: #ef4444;
+  --badge-warning-bg: rgba(255, 159, 67, 0.16);
+  --badge-warning-text: #ff9f43;
+  --badge-info-bg: rgba(65, 199, 255, 0.15);
+  --badge-info-text: #41c7ff;
+  
+  --scrollbar-track: #18212b;
+  --scrollbar-thumb: #43576b;
+
+  /* Role colors (theme-aware) */
+  --role-naciente: #22c55e;
+  --role-naciente-bg: rgba(34, 197, 94, 0.15);
+  --role-lateral: #3b82f6;
+  --role-lateral-bg: rgba(59, 130, 246, 0.15);
+  --role-colector: #a855f7;
+  --role-colector-bg: rgba(168, 85, 247, 0.15);
+  --role-caneria: #ec4899;
+  --role-caneria-bg: rgba(236, 72, 153, 0.15);
+  --role-neutral: #64748b;
+  --role-neutral-bg: rgba(100, 116, 139, 0.15);
+
+  /* Semantic state backgrounds (theme-aware) */
+  --success-bg: rgba(34, 197, 94, 0.1);
+  --success-border: rgba(34, 197, 94, 0.3);
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-border: rgba(239, 68, 68, 0.3);
+  --warning-bg: rgba(255, 159, 67, 0.1);
+  --warning-border: rgba(255, 159, 67, 0.3);
+  --info-bg: rgba(59, 130, 246, 0.1);
+  --info-border: rgba(59, 130, 246, 0.3);
+
+  /* Locked/disabled state */
+  --locked-bg: rgba(0, 0, 0, 0.15);
+
+  /* Input backgrounds */
+  --surface-input: rgba(0, 0, 0, 0.2);
+  --surface-input-border: rgba(255, 255, 255, 0.1);
+
+  --overlay-bg: rgba(16, 22, 29, 0.9);
+  --overlay-border: rgba(120, 158, 196, 0.2);
+  --overlay-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+  --overlay-blur: blur(16px);
+  
+  --toolbar-bg: var(--overlay-bg);
+  --toolbar-border: var(--overlay-border);
+  --toolbar-shadow: var(--overlay-shadow);
+  --toolbar-blur: var(--overlay-blur);
+  --toolbar-hover-bg: rgba(65, 199, 255, 0.1);
+  --toolbar-active-bg: var(--accent-soft);
+  --toolbar-icon-inactive: rgba(203, 219, 235, 0.6);
+  --toolbar-divider: rgba(120, 158, 196, 0.18);
+  
+  /* Legacy aliases */
+  --bg-color: var(--bg);
+  --sidebar-bg: var(--surface);
+  --border-color: var(--border);
+  --text-main: var(--text-primary);
+  --accent-color: var(--accent);
+}
+
+/* ============================================
+   THEME: mint-clean
+   Light presentation theme for client meetings
+   ============================================ */
+[data-theme="mint-clean"] {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-elevated: #ffffff;
+  --border: #e2e8f0;
+  
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  --accent: #10b981;
+  --accent-soft: rgba(16, 185, 129, 0.1);
+  --accent-hover: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.3);
+  
+  --danger: #dc2626;
+  --warning: #d97706;
+  --success: #16a34a;
+  --info: #2563eb;
+  
+  --hover-bg: #f1f5f9;
+  --active-bg: #e2e8f0;
+
+  /* Soft backgrounds for semantic states */
+  --success-soft: rgba(22, 163, 74, 0.1);
+  --info-soft: rgba(37, 99, 235, 0.1);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  
+  --table-header-bg: #f1f5f9;
+  --table-row-hover: #f8fafc;
+  --table-row-selected: rgba(16, 185, 129, 0.1);
+  
+  --canvas-bg: #f1f5f9;
+  --grid-color: rgba(0, 0, 0, 0.04);
+
+  --terrain-line: #7b6a55;
+  --pipe-line: #1f4f86;
+  --hgl-line: #0ea5e9;
+  --egl-line: #d97706;
+  
+  --pipe-default: #94a3b8;
+  --pipe-selected: #10b981;
+  --node-default: #059669;
+  --node-selected: #ffffff;
+  
+  --badge-success-bg: rgba(22, 163, 74, 0.1);
+  --badge-success-text: #16a34a;
+  --badge-error-bg: rgba(220, 38, 38, 0.1);
+  --badge-error-text: #dc2626;
+  --badge-warning-bg: rgba(217, 119, 6, 0.1);
+  --badge-warning-text: #d97706;
+  --badge-info-bg: rgba(37, 99, 235, 0.1);
+  --badge-info-text: #2563eb;
+  
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
+
+  /* Role colors (theme-aware) */
+  --role-naciente: #16a34a;
+  --role-naciente-bg: rgba(22, 163, 74, 0.1);
+  --role-lateral: #2563eb;
+  --role-lateral-bg: rgba(37, 99, 235, 0.1);
+  --role-colector: #9333ea;
+  --role-colector-bg: rgba(147, 51, 234, 0.1);
+  --role-caneria: #db2777;
+  --role-caneria-bg: rgba(219, 39, 119, 0.1);
+  --role-neutral: #64748b;
+  --role-neutral-bg: rgba(100, 116, 139, 0.1);
+
+  /* Semantic state backgrounds (theme-aware) */
+  --success-bg: rgba(22, 163, 74, 0.1);
+  --success-border: rgba(22, 163, 74, 0.3);
+  --error-bg: rgba(220, 38, 38, 0.1);
+  --error-border: rgba(220, 38, 38, 0.3);
+  --warning-bg: rgba(217, 119, 6, 0.1);
+  --warning-border: rgba(217, 119, 6, 0.3);
+  --info-bg: rgba(37, 99, 235, 0.1);
+  --info-border: rgba(37, 99, 235, 0.3);
+
+  /* Locked/disabled state */
+  --locked-bg: rgba(0, 0, 0, 0.08);
+
+  /* Input backgrounds */
+  --surface-input: rgba(0, 0, 0, 0.08);
+  --surface-input-border: rgba(0, 0, 0, 0.1);
+
+  --overlay-bg: rgba(255, 255, 255, 0.95);
+  --overlay-border: rgba(0, 0, 0, 0.1);
+  --overlay-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --overlay-blur: blur(12px);
+  
+  --toolbar-bg: var(--overlay-bg);
+  --toolbar-border: var(--overlay-border);
+  --toolbar-shadow: var(--overlay-shadow);
+  --toolbar-blur: var(--overlay-blur);
+  --toolbar-hover-bg: rgba(0, 0, 0, 0.05);
+  --toolbar-active-bg: rgba(16, 185, 129, 0.15);
+  --toolbar-icon-inactive: rgba(0, 0, 0, 0.5);
+  --toolbar-divider: rgba(0, 0, 0, 0.1);
+  
+  /* Legacy aliases */
+  --bg-color: var(--bg);
+  --sidebar-bg: var(--surface);
+  --border-color: var(--border);
+  --text-main: var(--text-primary);
+  --accent-color: var(--accent);
+}
+
+/* ============================================
+   THEME: high-contrast
+   Maximum visibility for construction sites
+   ============================================ */
+[data-theme="high-contrast"] {
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --surface-elevated: #111111;
+  --border: #333333;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #e5e5e5;
+  --text-muted: #a3a3a3;
+  
+  --accent: #fbbf24;
+  --accent-soft: rgba(251, 191, 36, 0.15);
+  --accent-hover: #f59e0b;
+  --accent-glow: rgba(251, 191, 36, 0.5);
+  
+  --danger: #ff0000;
+  --warning: #ffaa00;
+  --success: #00ff00;
+  --info: #00aaff;
+  
+  --hover-bg: #1a1a1a;
+  --active-bg: #262626;
+
+  /* Soft backgrounds for semantic states */
+  --success-soft: rgba(0, 255, 0, 0.15);
+  --info-soft: rgba(0, 170, 255, 0.15);
+  
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  
+  --table-header-bg: #111111;
+  --table-row-hover: #1a1a1a;
+  --table-row-selected: rgba(251, 191, 36, 0.2);
+  
+  --canvas-bg: #000000;
+  --grid-color: rgba(255, 255, 255, 0.08);
+
+  --terrain-line: #c7b58d;
+  --pipe-line: #00aaff;
+  --hgl-line: #00ffff;
+  --egl-line: #ffd000;
+  
+  --pipe-default: #666666;
+  --pipe-selected: #fbbf24;
+  --node-default: #fbbf24;
+  --node-selected: #ffffff;
+  
+  --badge-success-bg: rgba(0, 255, 0, 0.2);
+  --badge-success-text: #00ff00;
+  --badge-error-bg: rgba(255, 0, 0, 0.2);
+  --badge-error-text: #ff0000;
+  --badge-warning-bg: rgba(255, 170, 0, 0.2);
+  --badge-warning-text: #ffaa00;
+  --badge-info-bg: rgba(0, 170, 255, 0.2);
+  --badge-info-text: #00aaff;
+  
+  --scrollbar-track: #111111;
+  --scrollbar-thumb: #555555;
+
+  /* Role colors (theme-aware) */
+  --role-naciente: #00ff00;
+  --role-naciente-bg: rgba(0, 255, 0, 0.2);
+  --role-lateral: #00aaff;
+  --role-lateral-bg: rgba(0, 170, 255, 0.2);
+  --role-colector: #bf00ff;
+  --role-colector-bg: rgba(191, 0, 255, 0.2);
+  --role-caneria: #ff00ff;
+  --role-caneria-bg: rgba(255, 0, 255, 0.2);
+  --role-neutral: #a3a3a3;
+  --role-neutral-bg: rgba(163, 163, 163, 0.2);
+
+  /* Semantic state backgrounds (theme-aware) */
+  --success-bg: rgba(0, 255, 0, 0.15);
+  --success-border: rgba(0, 255, 0, 0.4);
+  --error-bg: rgba(255, 0, 0, 0.15);
+  --error-border: rgba(255, 0, 0, 0.4);
+  --warning-bg: rgba(255, 170, 0, 0.15);
+  --warning-border: rgba(255, 170, 0, 0.4);
+  --info-bg: rgba(0, 170, 255, 0.15);
+  --info-border: rgba(0, 170, 255, 0.4);
+
+  /* Locked/disabled state */
+  --locked-bg: rgba(255, 255, 255, 0.1);
+
+  /* Input backgrounds */
+  --surface-input: rgba(255, 255, 255, 0.1);
+  --surface-input-border: rgba(255, 255, 255, 0.2);
+
+  --overlay-bg: rgba(0, 0, 0, 0.95);
+  --overlay-border: #333333;
+  --overlay-shadow: none;
+  --overlay-blur: none;
+  
+  --toolbar-bg: var(--overlay-bg);
+  --toolbar-border: var(--overlay-border);
+  --toolbar-shadow: var(--overlay-shadow);
+  --toolbar-blur: var(--overlay-blur);
+  --toolbar-hover-bg: rgba(255, 255, 255, 0.1);
+  --toolbar-active-bg: rgba(251, 191, 36, 0.2);
+  --toolbar-icon-inactive: #a3a3a3;
+  --toolbar-divider: #333333;
+  
+  /* Legacy aliases */
+  --bg-color: var(--bg);
+  --sidebar-bg: var(--surface);
+  --border-color: var(--border);
+  --text-main: var(--text-primary);
+  --accent-color: var(--accent);
+}
+
+/* Fallback: si no hay data-theme, usar engineering-dark */
+html:not([data-theme]) {
+  --bg: #10161d;
+  --surface: #18212b;
+  --surface-elevated: #1f2b36;
+  --border: #314252;
+  
+  --text-primary: #d8e3ee;
+  --text-secondary: #93a7bb;
+  --text-muted: #617487;
+  
+  --accent: #41c7ff;
+  --accent-soft: rgba(65, 199, 255, 0.16);
+  --accent-hover: #20b4f0;
+  --accent-glow: rgba(65, 199, 255, 0.4);
+  
+  --danger: #ef4444;
+  --warning: #ff9f43;
+  --success: #22c55e;
+  --info: #3b82f6;
+  
+  --hover-bg: #22303d;
+  --active-bg: #293948;
+
+  /* Soft backgrounds for semantic states */
+  --success-soft: rgba(34, 197, 94, 0.12);
+  --info-soft: rgba(59, 130, 246, 0.12);
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  
+  --table-header-bg: #131c24;
+  --table-row-hover: #1d2933;
+  --table-row-selected: rgba(65, 199, 255, 0.18);
+  
+  --canvas-bg: #0d141b;
+  --grid-color: rgba(128, 188, 255, 0.05);
+
+  --terrain-line: #8a7b6b;
+  --pipe-line: #3c78a8;
+  --hgl-line: #77d8ff;
+  --egl-line: #ffb25c;
+  
+  --pipe-default: #5a7286;
+  --pipe-selected: #41c7ff;
+  --node-default: #67b7ff;
+  --node-selected: #ffffff;
+  
+  --badge-success-bg: rgba(34, 197, 94, 0.15);
+  --badge-success-text: #22c55e;
+  --badge-error-bg: rgba(239, 68, 68, 0.15);
+  --badge-error-text: #ef4444;
+  --badge-warning-bg: rgba(255, 159, 67, 0.16);
+  --badge-warning-text: #ff9f43;
+  --badge-info-bg: rgba(65, 199, 255, 0.15);
+  --badge-info-text: #41c7ff;
+  
+  --scrollbar-track: #18212b;
+  --scrollbar-thumb: #43576b;
+
+  --overlay-bg: rgba(16, 22, 29, 0.9);
+  --overlay-border: rgba(120, 158, 196, 0.2);
+  --overlay-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+  --overlay-blur: blur(16px);
+  
+  --toolbar-bg: var(--overlay-bg);
+  --toolbar-border: var(--overlay-border);
+  --toolbar-shadow: var(--overlay-shadow);
+  --toolbar-blur: var(--overlay-blur);
+  --toolbar-hover-bg: rgba(65, 199, 255, 0.1);
+  --toolbar-active-bg: var(--accent-soft);
+  --toolbar-icon-inactive: rgba(203, 219, 235, 0.6);
+  --toolbar-divider: rgba(120, 158, 196, 0.18);
+
+  /* Role colors (theme-aware) */
+  --role-naciente: #22c55e;
+  --role-naciente-bg: rgba(34, 197, 94, 0.15);
+  --role-lateral: #3b82f6;
+  --role-lateral-bg: rgba(59, 130, 246, 0.15);
+  --role-colector: #a855f7;
+  --role-colector-bg: rgba(168, 85, 247, 0.15);
+  --role-caneria: #ec4899;
+  --role-caneria-bg: rgba(236, 72, 153, 0.15);
+  --role-neutral: #64748b;
+  --role-neutral-bg: rgba(100, 116, 139, 0.15);
+
+  /* Semantic state backgrounds (theme-aware) */
+  --success-bg: rgba(34, 197, 94, 0.1);
+  --success-border: rgba(34, 197, 94, 0.3);
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --error-border: rgba(239, 68, 68, 0.3);
+  --warning-bg: rgba(255, 159, 67, 0.1);
+  --warning-border: rgba(255, 159, 67, 0.3);
+  --info-bg: rgba(59, 130, 246, 0.1);
+  --info-border: rgba(59, 130, 246, 0.3);
+
+  /* Locked/disabled state */
+  --locked-bg: rgba(0, 0, 0, 0.15);
+
+  /* Input backgrounds */
+  --surface-input: rgba(0, 0, 0, 0.2);
+  --surface-input-border: rgba(255, 255, 255, 0.1);
+}
